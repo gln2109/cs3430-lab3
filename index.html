@@ -9,11 +9,25 @@
 <body style="font-family: arial">
     <h2 id="header" style="transition: color 0.2s">COMS3430 - Lab 3</h2>
 
-    <h4>Part I</h4>
-    <input type="button" value="Play" id="play1">
-    <h4>Part II</h4>
-    <input type="button" value="Play" id="play2">
-    <h4>Part III</h4>
+    <h3>Part I</h3>
+    <button onclick="playSound1()">Play</button>
+    <button onclick="pauseSounds()">Pause</button>
+    <h3>Part II</h3>
+    <button onclick="playSound2()">Play</button>
+    <button onclick="pauseSounds()">Pause</button><br>
+    <button onclick="toggleSweep()">Sweep Rate</button>
+    <h3>Part III</h3>
+    <p>For Part II, my goal was to recreate a police siren.
+        <br><br>
+        I did this using a sine wave with frequency 700Hz, and applying frequency modulation using an LFO.
+        The LFO has an amplitude of 300, sweeping the signal from 400Hz to 1000Hz.
+        Its frequency can be toggled between 0.3Hz for a slow sweep and 3Hz for a fast one.
+        <br><br>
+        Additionally, I incorporated a bandpass filter centered at 1500Hz to amplify the higher frequencies.
+        This was done in efforts to simulate the car horn through which a police siren would play.
+        <br><br>
+        WebAudio Structure: lfo osc ---> lfo gain --(frequency)--> main osc ---> bandpass ---> main gain
+    </p>
 
 
 </body>
